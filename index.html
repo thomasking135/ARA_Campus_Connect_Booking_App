@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>ARA Booking App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../CSS/main.css">
+    </head>
+    <body>
+
+        <div class="calendar" id="calendar-app">
+            <div class="calendar--day-view" id="day-view">
+              <span class="day-view-exit" id="day-view-exit">&times;</span>
+              <span class="day-view-date" id="day-view-date">MAY 29 2023</span>
+              <div class="day-view-content">
+                <div class="day-highlight">
+                  You <span class="day-students" id="day-students">have no students for today</span>. &nbsp; <span tabindex="0" onkeyup="if(student.keyCode != 13) return; this.click();" class="day-students-link" id="add-student" data-date>Join the class</span>
+                </div>
+                
+                <div class="day-add-student" id="add-day-student-box" data-active="false">
+                  <div class="row">
+                    <div class="half">
+                      <label class="add-student-label">
+                         Name of student
+                        <input type="text" class="add-student-edit add-student-edit--long" placeholder="New student" id="input-add-student-name">
+
+                      </label>
+                    </div>
+                    <div class="qtr">
+                      <label class="add-student-label">
+                    Start Time
+                        <input type="text" class="add-student-edit" placeholder="8:15" id="input-add-student-start-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
+                        <input type="text" class="add-student-edit" placeholder="am" id="input-add-student-start-ampm" data-options="a,p,am,pm">
+                      </label>
+                    </div>
+                    <div class="qtr">
+                      <label class="add-student-label">
+                    End Time
+                        <input type="text" class="add-student-edit" placeholder="9" id="input-add-student-end-time" data-options="1,2,3,4,5,6,7,8,9,10,11,12" data-format="datetime">
+                        <input type="text" class="add-student-edit" placeholder="am" id="input-add-student-end-ampm" data-options="a,p,am,pm">
+                      </label>
+                    </div>
+                    <div class="half">
+                      <a onkeyup="if(student.keyCode != 13) return; this.click();" tabindex="0" id="add-student-save" class="student-btn--save student-btn">save</a>
+                      <a tabindex="0" id="add-student-cancel" class="student-btn--cancel student-btn">cancel</a>
+                    </div>
+                  </div>
+
+                </div>
+                <div id="day-students-list" class="day-students-list">
+
+                </div>
+                <!--
+                <div class="day-inspiration-quote" id="inspirational-quote">
+                  Every child is an artist.  The problem is how to remain an artist once he grows up. –Pablo Picasso
+                </div>-->
+              </div>
+            </div>
+            <div class="calendar--view" id="calendar-view">
+              <div class="cview__month">
+                <span class="cview__month-last" id="calendar-month-last">Apr</span>
+                <span class="cview__month-current" id="calendar-month">May</span>
+                <span class="cview__month-next" id="calendar-month-next">Jun</span>
+              </div>
+              <div class="cview__header closed">Sun</div>
+              <div class="cview__header closed">Mon</div>
+              <div class="cview__header open">Tue</div>
+              <div class="cview__header closed">Wed</div>
+              <div class="cview__header open">Thu</div>
+              <div class="cview__header closed">Fri</div>
+              <div class="cview__header closed">Sat</div>
+              <div class="calendar--view" id="dates">
+              </div>
+            </div>
+            <div class="footer">
+              <span><span id="footer-date" class="footer__link">Today is May 30</span></span>
+              <h2 class="select">Select a date and add yourself to a class</h2>
+            </div>
+          </div>
+          
+
+        <script src="../JS/main.js" async defer></script>
+    </body>
+
+</html>
